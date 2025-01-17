@@ -27,12 +27,9 @@ echo "source: ${source_array[@]}"
 echo "target: ${target_dir_array[@]}"
 for target_dir in ${target_dir_array[@]}
 do
-	NOWTIME=`date '+%Y-%m-%d_%H:%M:%S'`
-	mkdir -pv $target_dir/backup_$NOWTIME
-	for source in ${source_array[@]}
-	do
-		cp -rLv $source $target_dir/backup_$NOWTIME/$source
-	done
+	NOWTIME=`date '+%Y%m%d_%H%M%S'`
+	mkdir -pv $target_dir
+	tar -cvf $target_dir/backup_$NOWTIME.tar ${source_array[@]}
 done
 
 echo "主人~请稍等~正在同步磁盘~"
