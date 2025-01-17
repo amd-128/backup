@@ -31,7 +31,7 @@ do
 	mkdir -pv $target_dir/backup_$NOWTIME
 	for source in ${source_array[@]}
 	do
-		cp -rv $source $target_dir/backup_$NOWTIME/$source
+		cp -rLv $source $target_dir/backup_$NOWTIME/$source
 	done
 done
 
